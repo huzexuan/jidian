@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>我的</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <style>
+        .nav {
+            position: fixed;
+            top: 0;
+        }
+        
+        .page_title {
+            width: 100vw;
+            height: 4rem;
+            background: #a07c5a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .page_title p {
+            width: 100vw;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .iconxiangzuojiantou {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .conten {
+            margin-top: 4rem;
+            overflow: hidden;
+        }
+        
+        .title {
+            text-align: center;
+            margin: 6rem 0 5rem 0;
+        }
+        
+        .logo {
+            width: 6rem;
+            height: 6rem;
+            background: #000;
+            border-radius: 1rem;
+        }
+        
+        .title p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .item {
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            padding: 0.8rem 0.3rem;
+            border-bottom: 0.05rem dashed #dadada;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="page_title">
+                <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+                <p>协议与帮助</p>
+            </div>
+        </div>
+        <div class="conten">
+            <div class="title">
+                <img alt="" class="logo">
+                <p>天堂念</p>
+            </div>
+            <a class="item" href="./article_list.html">
+                隐私与协议
+            </a>
+            <a class="item" href="./article_list.html">
+                使用与帮助
+            </a>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+</body>
+
+</html>

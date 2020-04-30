@@ -1,0 +1,121 @@
+/* 热门 */
+
+.hot_title {
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 1rem 0 0.5rem 1.7rem;
+    font-size: 1.2rem;
+    color: #30312c;
+    font-weight: bold;
+}
+
+.hot_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.hot_item {
+    width: 47vw;
+    box-sizing: border-box;
+    margin: 0 0 0.45rem 0.45rem;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    border: 0.05rem solid #dcdcdc;
+    background: #fff;
+    overflow: hidden;
+    text-align: unset;
+    line-height: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hot_portrait {
+    width: 19vw;
+}
+
+.hot_portraitImg {
+    width: 100%;
+    height: 5rem;
+    display: block;
+}
+
+.hot_birthdate {
+    color: #6c6c6c;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+.hot_name {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.lazhu {
+    width: 0.75rem;
+    height: 1rem;
+}
+
+.huiyuan {
+    width: 0.75rem;
+    height: 1rem;
+}
+
+.ai {
+    width: 1rem;
+    background: #c99238;
+    text-align: center;
+    font-size: 3vw;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    color: #fffadc;
+    border-radius: 0.2rem;
+}
+
+.hot_describe {
+    margin-top: 0.6rem;
+}
+
+.hot_describe_item>.icon {
+    width: 1rem;
+    margin-right: 0.1rem;
+}
+
+.hot_describe_item>p img {
+    display: block;
+    margin: auto;
+}
+
+.hot_describe_item {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #707070;
+    margin-bottom: 0.3rem;
+}
+
+.ai-bg {
+    padding: 0 2vw;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    background: #c99238;
+    border-radius: 1vw;
+    margin-left: 0.2rem;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.iconxin {
+    font-size: 0.8rem;
+    color: #fff;
+    margin-right: 1vw;
+}
+
+.over_text {
+    width: 4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

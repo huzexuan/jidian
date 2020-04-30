@@ -1,0 +1,117 @@
+body {
+    background: #f5ebe1;
+}
+
+.nav {
+    width: 100%;
+    height: 10rem;
+    box-sizing: border-box;
+    padding: 1rem 1rem 0 1rem;
+    overflow: hidden;
+    background: linear-gradient(131deg, rgba(151, 93, 47, 1) 0%, rgba(172, 118, 48, 1) 100%);
+    border-radius: 0 0 2rem 2rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_l {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+}
+
+.user_img {
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin-right: 0.5rem;
+}
+
+.user_del {
+    color: #fff;
+}
+
+.user_del>p:last-child {
+    font-size: 0.5rem;
+    color: #fff9f3;
+    padding: 0 0.8rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3rem;
+    margin-top: 0.2rem;
+}
+
+.icon {
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.jidian {
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1.9rem;
+    border-radius: 0.8rem 0.8rem 0 0;
+}
+
+.jidian p {
+    text-align: center;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+}
+
+.menu {
+    margin-top: 1rem;
+}
+
+.menu_item {
+    padding: 1rem 1.5rem;
+    line-height: 1;
+    background: #fbf8f3;
+    border-bottom: 0.05rem solid #efece7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconxiangyoujiantou {
+    color: #d2d3ce;
+}
+
+.item_name {
+    display: flex;
+    align-items: center;
+    color: #000100;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.item_name>.iconfont {
+    color: #c1c2bd;
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+.iconchangguan {
+    font-size: 1.3rem;
+}
+
+.iconfankuitianbao {
+    font-size: 1.2rem;
+}
+
+.iconguanyuwomen,
+.iconxieyixiangqing {
+    font-size: 1.2rem !important;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>我的</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <style>
+        .nav {
+            width: 100%;
+            height: 4rem;
+            background: #a07c5a;
+            position: fixed;
+            top: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav p {
+            margin: auto;
+        }
+        
+        .iconxiangzuojiantou {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .zoom {
+            width: 100%;
+            height: 4rem;
+        }
+        
+        .venueImg {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        .venue_item {
+            width: 9.4rem;
+            height: 12rem;
+            border: 0.05rem solid #e7e8e0;
+            margin: 0 0 1.5rem 1.5rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            overflow: hidden;
+        }
+        
+        .img {
+            width: 9.4rem;
+            height: 10rem;
+            background: #000;
+            display: block;
+        }
+        
+        .venue_item p {
+            text-align: center;
+            line-height: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+            <p>请选择场馆照片</p>
+        </div>
+        <div class="zoom"></div>
+        <div class="venueImg">
+            <div class="venue_item">
+                <img src="../img/venue_bg.png" class="img" />
+                <p>天堂馆-豪华版</p>
+            </div>
+            <div class="venue_item">
+                <img src="../img/venue_bg.png" class="img" />
+                <p>天堂馆-豪华版</p>
+            </div>
+            <div class="venue_item">
+                <img src="../img/venue_bg.png" class="img" />
+                <p>天堂馆-豪华版</p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+</body>
+
+</html>

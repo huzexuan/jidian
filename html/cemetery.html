@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="height=device-height, minimum-scale=0.5, maximum-scale=0.8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>纪念馆</title>
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/cemetery.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min1.9.1.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 1920px;
+            height: 1080px;
+        }
+        
+        #loading {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            z-index: 999999999;
+            opacity: 1;
+        }
+        
+        #loading div {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            font-size: 18px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 45%;
+            z-index: 9999999991;
+            color: #999999;
+        }
+    </style>
+    <script>
+        $(function() {
+            document.onreadystatechange = a;
+
+            function a() {
+                if (document.readyState == "complete") {
+                    $("#loading").animate({
+                        "opacity": "0"
+                    }, 500).hide(1000);
+                    $(".jdmenu").show("show");
+                    $(".jnginfo").slideToggle(1000)
+                }
+            }
+            document.body.scrollLeft = (960 - (window.innerWidth / 2))
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="t-shade" style="display: none;"></div>
+    <div class="t-content" id="div1" style="display: none; position: absolute; left: 953px; top: 587px;"></div>
+    <script src="../js/cemetery.js"></script>
+    <div id="app" style="position: relative;">
+        <div class="nav">
+            <div class="page_title">
+                <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+                <p>XXX的墓园</p>
+            </div>
+        </div>
+        <div class="jdmenu" style="display: block;">
+            <ul>
+                <li><a @click="jxk(0,$event)" data-toggle="modal" data-target="#gpModal">献花</a></li>
+                <li><a @click="jxk(1,$event)" data-toggle="modal" data-target="#gpModal">上香</a></li>
+                <li><a @click="jxk(2,$event)" data-toggle="modal" data-target="#gpModal">点烛</a></li>
+                <li><a @click="jxk(3,$event)" data-toggle="modal" data-target="#gpModal">祭品</a></li>
+                <li><a @click="jxk(4,$event)" data-toggle="modal" data-target="#gpModal">装饰</a></li>
+                <li><a @click="jxk(5,$event)" data-toggle="modal" data-target="#gpModal">扫墓</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+
+            <div class="jngbox">
+                <div class="mubj" style="background-image: url(&quot;http://j.tiantang6.com/md/mubg/1242.jpg&quot;);">
+                    <div class="mubei" style="background-image: url(../img/312.gif);"></div>
+                </div>
+
+                <div class="mubeic"></div>
+                <div class="mubeih"></div>
+                <div class="huopen"></div>
+                <div class="smsx"></div>
+                <div class="beiwen" style="width: 130px; height: 220px; left: 895px; top: 300px;">
+                    <div class="beiphoto"><img src="/uptupian/mo/t2019719164626.jpeg" border="0"></div>
+                    <div class="beitext"><span class="nametext name1">韩馨浩</span><span class="nametext name2">李卓</span><span class="zhimu">之<br>墓</span></div>
+                </div>
+
+                <div class="box box-4" id="jpboxmain">
+
+                    <dl class="jpshow" id="9859952" style="left:911.5937px; top:480.0781px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/733.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>古式铜香炉</div>
+                                <div>敬献人: 浩妈</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/9 8:47:45">
+                                    <span class="t_d">9天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">51分</span>
+                                    <span class="t_s">1秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="9897693" style="left:1306.187px; top:698.3906px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/701.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>守墓女童</div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/5/15 8:24:23">
+                                    <span class="t_d">15天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">27分</span>
+                                    <span class="t_s">39秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="9911653" style="left:582.7968px; top:359.7968px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/702.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>守墓男童</div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/5/17 8:27:40">
+                                    <span class="t_d">17天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">30分</span>
+                                    <span class="t_s">56秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="9911658" style="left:1233.609px; top:369.3906px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/701.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">守墓女童</font>
+                                    </font>
+                                </div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/5/17 8:27:59">
+                                    <span class="t_d">17天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">31分</span>
+                                    <span class="t_s">15秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="9942248" style="left:256.8125px; top:453.5937px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/che/117.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>军用级SUV</div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/7/20 10:08:30">
+                                    <span class="t_d">81天</span>
+                                    <span class="t_h">19小时</span>
+                                    <span class="t_m">11分</span>
+                                    <span class="t_s">46秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10032805" style="left:537.9843px; top:690.8437px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/702.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">守墓男童</font>
+                                    </font>
+                                </div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/5/30 8:21:18">
+                                    <span class="t_d">30天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">24分</span>
+                                    <span class="t_s">34秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10065822" style="left:371.7968px; top:43.59375px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/620.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>柳条装饰动画</div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/5/2 7:58:26">
+                                    <span class="t_d">2天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">1分</span>
+                                    <span class="t_s">42秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10065824" style="left:846.3906px; top:33.1875px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/zhuangshi/620.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">柳条装饰动画</font>
+                                    </font>
+                                </div>
+                                <div>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">敬献人: 浩妈</font>
+                                    </font>
+                                </div>
+                                <div class="jpdt">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">剩余:
+                                        </font>
+                                    </font><input type="datetime" value="2020/5/2 7:58:44">
+                                    <span class="t_d">2天</span>
+                                    <span class="t_h">17小时</span>
+                                    <span class="t_m">2分</span>
+                                    <span class="t_s"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+
+
+
+                    <dl class="jpshow" id="10471036" style="left:1003.383px; top:478.9572px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/yinping/1011.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>南京牌香烟</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:47:41">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">50分</span>
+                                    <span class="t_s">57秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471057" style="left:775.5086px; top:563.8966px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie815/91.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>桂花酒</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/2 9:48:52">
+                                    <span class="t_d">2天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">52分</span>
+                                    <span class="t_s">8秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471065" style="left:600.2822px; top:604.0369px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/che/71.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>紫檀佛珠手串</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/14 9:49:20">
+                                    <span class="t_d">14天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">52分</span>
+                                    <span class="t_s">36秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471089" style="left:600.7318px; top:648.8361px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/che/75.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>铂金钻戒</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/14 9:51:39">
+                                    <span class="t_d">14天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">54分</span>
+                                    <span class="t_s">55秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471117" style="left:882.3453px; top:634.6109px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/food/124.png">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>东坡肉</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/4 9:53:36">
+                                    <span class="t_d">4天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">56分</span>
+                                    <span class="t_s">52秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471125" style="left:1075.996px; top:741.9164px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie715/128a.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>莲花灯</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:54:44">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">58分</span>
+                                    <span class="t_s"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471127" style="left:993.3434px; top:755.6728px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie715/128a.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>莲花灯</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:54:53">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">58分</span>
+                                    <span class="t_s">9秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471131" style="left:824.9761px; top:749.8565px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie715/128a.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>莲花灯</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:55:05">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">58分</span>
+                                    <span class="t_s">21秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471135" style="left:694.5679px; top:724.3431px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie715/128a.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>莲花灯</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:55:23">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">18小时</span>
+                                    <span class="t_m">58分</span>
+                                    <span class="t_s">39秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471151" style="left:1051.081px; top:20.28539px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie4/734.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>彩碟风筝</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:57:41">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">19小时</span>
+                                    <span class="t_m"></span>
+                                    <span class="t_s">57秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+
+
+                    <dl class="jpshow" id="10471153" style="left:718.2637px; top:0.693558px;" onclick="javascript:void(0)">
+                        <div class="jpbox">
+                            <img src="http://j.tiantang6.com/md/gp/jie4/733.gif">
+                            <div class="pop"></div>
+                            <div class="jpinfo">
+                                <div>锂锦风筝</div>
+                                <div>敬献人: 四姨</div>
+                                <div class="jpdt">剩余:
+                                    <input type="datetime" value="2020/5/6 9:58:15">
+                                    <span class="t_d">6天</span>
+                                    <span class="t_h">19小时</span>
+                                    <span class="t_m">1分</span>
+                                    <span class="t_s">31秒</span>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="modal fade in" id="gpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 9999991; top: 15%; display: none; padding-left: 0px;">
+            <div class="modal-dialog">
+                <div class="modal-content" style="z-index:9999991;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="right:5px;position:absolute;z-index:9999992;">×</button>
+                    <ul id="gpTab" class="nav nav-tabs">
+                        <li id="tab1" class="active"><a href="javascript:void(0)" class="jxan" data-toggle="tab" gid="1" iid="0" aria-expanded="true">献花</a></li>
+                        <li id="tab2" class=""><a href="javascript:void(0)" class="jxan" data-toggle="tab" gid="2" iid="0" aria-expanded="false">上香</a></li>
+                        <li id="tab3"><a href="javascript:void(0)" class="jxan" data-toggle="tab" gid="3" iid="0">点烛</a></li>
+                        <li id="tab4" class=""><a href="javascript:void(0)" class="jxan" data-toggle="tab" gid="4" iid="0" aria-expanded="false">祭品</a></li>
+                        <li id="tab5"><a href="javascript:void(0)" class="jxan" data-toggle="tab" gid="5" iid="0">装饰</a></li>
+                        <li id="tab6" class=""><a href="javascript:void(0)" class="jxan" data-toggle="tab" gid="6" iid="0" aria-expanded="false">扫墓</a></li>
+                    </ul>
+
+                    <div id="gpTabContent" class="tab-content">
+
+                        <div class="tab-pane fade in active" id="gplist1">
+
+                            <div class="fldh">
+
+                                <a href="javascript:void(0)" class="jxan lock" gid="1" iid="0">推荐</a>
+
+                                <a href="javascript:void(0)" class="jxan " gid="1" iid="49">鲜花</a>
+
+                                <a href="javascript:void(0)" class="jxan " gid="1" iid="50">花圈花篮</a>
+
+                                <a href="javascript:void(0)" class="jxan " gid="1" iid="68">盆栽.插花</a>
+
+                            </div>
+
+                            <ul class="gpbox">
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2300" gptb="0" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/1.png);" showsrc="http://j.tiantang6.com/md/gp/hua/1.png" gpname="祭奠鲜花"></div>
+                                    <p>祭奠鲜花</p>
+                                    <p><span class="tb red">免费</span><span class="">1天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2301" gptb="0" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/2.png);" showsrc="http://j.tiantang6.com/md/gp/hua/2.png" gpname="哀思花束"></div>
+                                    <p>哀思花束</p>
+                                    <p><span class="tb red">免费</span><span class="">2天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2302" gptb="0" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/3.png);" showsrc="http://j.tiantang6.com/md/gp/hua/3.png" gpname="小雏菊"></div>
+                                    <p>小雏菊</p>
+                                    <p><span class="tb red">免费</span><span class="">3天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2561" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/12.png);" showsrc="http://j.tiantang6.com/md/gp/hua/12.png" gpname="勿忘我"></div>
+                                    <p>勿忘我</p>
+                                    <p><span class="tb">10天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2563" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/14.png);" showsrc="http://j.tiantang6.com/md/gp/hua/14.png" gpname="感恩康乃馨"></div>
+                                    <p>感恩康乃馨</p>
+                                    <p><span class="tb">10天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2564" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/15.png);" showsrc="http://j.tiantang6.com/md/gp/hua/15.png" gpname="白玫瑰"></div>
+                                    <p>白玫瑰</p>
+                                    <p><span class="tb">10天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2567" gptb="3" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/18.png);" showsrc="http://j.tiantang6.com/md/gp/hua/18.png" gpname="黄菊"></div>
+                                    <p>黄菊</p>
+                                    <p><span class="tb">3天币</span><span class="">3天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2570" gptb="5" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/21.png);" showsrc="http://j.tiantang6.com/md/gp/hua/21.png" gpname="百合花"></div>
+                                    <p>百合花</p>
+                                    <p><span class="tb">5天币</span><span class="">5天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2573" gptb="5" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/24.png);" showsrc="http://j.tiantang6.com/md/gp/hua/24.png" gpname="满天星"></div>
+                                    <p>满天星</p>
+                                    <p><span class="tb">5天币</span><span class="">5天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2579" gptb="12" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/30.png);" showsrc="http://j.tiantang6.com/md/gp/hua/30.png" gpname="此生挚爱"></div>
+                                    <p>此生挚爱</p>
+                                    <p><span class="tb">12天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2580" gptb="12" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/31.png);" showsrc="http://j.tiantang6.com/md/gp/hua/31.png" gpname="此情不渝"></div>
+                                    <p>此情不渝</p>
+                                    <p><span class="tb">12天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2582" gptb="19" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/32.png);" showsrc="http://j.tiantang6.com/md/gp/hua/32.png" gpname="感恩亲情"></div>
+                                    <p>感恩亲情</p>
+                                    <p><span class="tb">19天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2591" gptb="20" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/33.png);" showsrc="http://j.tiantang6.com/md/gp/hua/33.png" gpname="长相思"></div>
+                                    <p>长相思</p>
+                                    <p><span class="tb">20天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2601" gptb="22" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/35.png);" showsrc="http://j.tiantang6.com/md/gp/hua/35.png" gpname="天堂鸟"></div>
+                                    <p>天堂鸟</p>
+                                    <p><span class="tb">22天币</span><span class="">30天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3040" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/37t.png);" showsrc="http://j.tiantang6.com/md/gp/hua/37t.png" gpname="感恩母爱"></div>
+                                    <p>感恩母爱</p>
+                                    <p><span class="tb">10天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3039" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/38b.png);" showsrc="http://j.tiantang6.com/md/gp/hua/38b.png" gpname="白月光"></div>
+                                    <p>白月光</p>
+                                    <p><span class="tb">10天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3035" gptb="18" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/42x.png);" showsrc="http://j.tiantang6.com/md/gp/hua/42x.png" gpname="岁月之歌"></div>
+                                    <p>岁月之歌</p>
+                                    <p><span class="tb">18天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3030" gptb="12" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/47m.png);" showsrc="http://j.tiantang6.com/md/gp/hua/47m.png" gpname="温馨思念"></div>
+                                    <p>温馨思念</p>
+                                    <p><span class="tb">12天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3029" gptb="22" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/48t.png);" showsrc="http://j.tiantang6.com/md/gp/hua/48t.png" gpname="香槟玫瑰"></div>
+                                    <p>香槟玫瑰</p>
+                                    <p><span class="tb">22天币</span><span class="">30天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3017" gptb="36" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/203e.png);" showsrc="http://j.tiantang6.com/md/gp/hua/203e.png" gpname="爱之永恒花篮"></div>
+                                    <p>爱之永恒花篮</p>
+                                    <p><span class="tb">36天币</span><span class="">30天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2317" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/102.png);" showsrc="http://j.tiantang6.com/md/gp/hua/102.png" gpname="哀思花圈"></div>
+                                    <p>哀思花圈</p>
+                                    <p><span class="tb">10天币</span><span class="">3天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2316" gptb="8" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/101.png);" showsrc="http://j.tiantang6.com/md/gp/hua/101.png" gpname="祭奠花圈"></div>
+                                    <p>祭奠花圈</p>
+                                    <p><span class="tb">8天币</span><span class="">3天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2318" gptb="16" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/103.png);" showsrc="http://j.tiantang6.com/md/gp/hua/103.png" gpname="缅怀花圈"></div>
+                                    <p>缅怀花圈</p>
+                                    <p><span class="tb">16天币</span><span class="">5天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2319" gptb="19" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/104.png);" showsrc="http://j.tiantang6.com/md/gp/hua/104.png" gpname="艺术花圈"></div>
+                                    <p>艺术花圈</p>
+                                    <p><span class="tb">19天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2320" gptb="25" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/105.png);" showsrc="http://j.tiantang6.com/md/gp/hua/105.png" gpname="光环未远缅怀花圈"></div>
+                                    <p>光环未远缅怀花圈</p>
+                                    <p><span class="tb">25天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2321" gptb="25" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/201.png);" showsrc="http://j.tiantang6.com/md/gp/hua/201.png" gpname="追忆花篮"></div>
+                                    <p>追忆花篮</p>
+                                    <p><span class="tb">25天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2322" gptb="36" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/202.png);" showsrc="http://j.tiantang6.com/md/gp/hua/202.png" gpname="十字花篮"></div>
+                                    <p>十字花篮</p>
+                                    <p><span class="tb">36天币</span><span class="">30天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2506" gptb="15" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/502.png);" showsrc="http://j.tiantang6.com/md/gp/hua/502.png" gpname="菊花盆栽"></div>
+                                    <p>菊花盆栽</p>
+                                    <p><span class="tb">15天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2505" gptb="15" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/501.png);" showsrc="http://j.tiantang6.com/md/gp/hua/501.png" gpname="菊花盆栽2"></div>
+                                    <p>菊花盆栽2</p>
+                                    <p><span class="tb">15天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3022" gptb="15" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/505r.png);" showsrc="http://j.tiantang6.com/md/gp/hua/505r.png" gpname="长寿花"></div>
+                                    <p>长寿花</p>
+                                    <p><span class="tb">15天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3021" gptb="15" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/506c.png);" showsrc="http://j.tiantang6.com/md/gp/hua/506c.png" gpname="绿萝盆栽"></div>
+                                    <p>绿萝盆栽</p>
+                                    <p><span class="tb">15天币</span><span class="">7天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3018" gptb="19" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/509w.png);" showsrc="http://j.tiantang6.com/md/gp/hua/509w.png" gpname="郁金香"></div>
+                                    <p>郁金香</p>
+                                    <p><span class="tb">19天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2508" gptb="21" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/510.png);" showsrc="http://j.tiantang6.com/md/gp/hua/510.png" gpname="艺术盆栽"></div>
+                                    <p>艺术盆栽</p>
+                                    <p><span class="tb">21天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="3023" gptb="25" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/514k.png);" showsrc="http://j.tiantang6.com/md/gp/hua/514k.png" gpname="荷花盆栽"></div>
+                                    <p>荷花盆栽</p>
+                                    <p><span class="tb">25天币</span><span class="">30天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2979" gptb="25" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/504dp.png);" showsrc="http://j.tiantang6.com/md/gp/hua/504dp.png" gpname="兰花"></div>
+                                    <p>兰花</p>
+                                    <p><span class="tb">25天币</span><span class="">30天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2722" gptb="10" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/300.png);" showsrc="http://j.tiantang6.com/md/gp/hua/300.png" gpname="柳条"></div>
+                                    <p>柳条</p>
+                                    <p><span class="tb">10天币</span><span class="">15天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2308" gptb="5" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/301.png);" showsrc="http://j.tiantang6.com/md/gp/hua/301.png" gpname="一支玫瑰"></div>
+                                    <p>一支玫瑰</p>
+                                    <p><span class="tb">5天币</span><span class="">3天</span></p>
+                                </li>
+
+                                <li class="gppro">
+                                    <div class="gimg" gpid="2314" gptb="0" gptype="1" style="background-image: url(http://j.tiantang6.com/md/gp/hua/307.png);" showsrc="http://j.tiantang6.com/md/gp/hua/307.png" gpname="红色小花"></div>
+                                    <p>红色小花</p>
+                                    <p><span class="tb red">免费</span><span class="">3天</span></p>
+                                </li>
+                                <span class="sxts">∧<br>∨</span>
+                            </ul>
+                            <div class="gpPage">向上滑动查看更多</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal-backdrop fade in" style="display: none;"></div>
+        <div class="modal fade in" id="jdModal" tabindex="-1" role="dialog" aria-labelledby="jdModalLabel" aria-hidden="true" style="z-index: 9999993; top: 20%; display: none; padding-left: 0px;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" id="jd_close" data-dismiss="modal" aria-hidden="true">×
+                        </button>
+                        <h4 class="modal-title" id="jdModalLabel">
+                            祭奠确认：
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" id="jdForm" name="jdForm" onsubmit="return false;"><input type="hidden" name="gpName" value="祭奠鲜花"><input type="hidden" name="gpid" value="2300"><input type="hidden" name="xx" value="677"><input type="hidden" name="yy" value="512">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" maxlength="302" name="jdly" id="jdly" placeholder="输入祭奠留言(可选)"></textarea>
+                                <p>本次敬献需要<span class="red" id="gptb">0</span>天币，扣除方式：</p>
+
+                                <label class="tb-label active">
+                                            <input type="radio" name="tbtype" value="1" checked=""><span class="badge pull-right">可用 <strong id="tb1">0</strong></span> 用户天币 
+                                        </label>
+
+                                <label class="tb-label disabled" id="ggtb">
+                                            <input type="radio" name="tbtype" value="2" disabled="disabled"><span class="badge pull-right">可用 <strong id="tb2">0</strong></span> 本馆公共账户 
+                                        </label>
+
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-loading-text="提交中..." id="jdsubmit">确认敬献</button> <button type="button" id="cxjd" class="btn btn-default" data-dismiss="modal">取消本次敬献</button>
+
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var div = document.getElementById('div1');
+            // var body = document.getElementById('app');
+            // console.log(body)
+            var disX = 0;
+            var disY = 0;
+            var l = 0;
+            var t = 0
+            div.ontouchstart = function(ev) { //鼠标按下
+                var oEvent = ev || event; //判断浏览器兼容
+                document.body.style.overflow = 'hidden';
+                disX = oEvent.touches[0].clientX - div1.offsetLeft; //鼠标横坐标点到div的offsetLeft距离
+                disY = oEvent.touches[0].clientY - div1.offsetTop; //鼠标纵坐标点到div的offsetTop距离
+                div.ontouchmove = function(ev) { //鼠标移动
+                    var oEvent = ev || event;
+                    var l = oEvent.touches[0].clientX - disX; //获取div左边的距离
+                    var t = oEvent.touches[0].clientY; //获取div上边的距离
+                    if (l < 0) { //判断div的可视区，为避免DIV失去鼠标点
+                        l = 0
+                    } else if (l > 1920 - div.offsetWidth) {
+                        l = 1920 - div.offsetWidth;
+                    }
+                    if (t < 0) {
+                        t = 0
+                    } else if (t > 1080 - div.offsetHeight) {
+                        t = 1080 - div.offsetHeight;
+                    }
+                    div.style.left = l + 'px'; //确定DIV的左边位置
+                    div.style.top = t + 'px'; //确定DIV的上边位置
+                }
+                div.ontouchend = function() { //当鼠标松开后关闭移动事件和自身事件
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    $('#jdModal').css('display', 'block')
+                }
+                return false;
+            }
+        }
+    </script>
+    <script>
+        $(function() {
+            $('.gppro').on('click', () => {
+                $('#gpModal').css('display', 'none')
+                $('body').removeClass('modal-open')
+                $('.modal-backdrop').css('display', 'none')
+                $('.t-shade').css('display', 'block')
+                $('.t-content').css({
+                    display: 'block',
+                })
+                $('.t-content').prepend(`
+        <div class="pop"></div><img src="http://j.tiantang6.com/md/gp/hua/1.png"><br>请将祭品移动<br>到要摆放的位置`)
+            })
+            $('#jd_close').on('click', () => {
+                $('#jdModal').css('display', 'none')
+            })
+            $('#cxjd').on('click', () => {
+                $('#jdModal').css('display', 'none')
+                $('.t-content').css(
+                    'display', 'none'
+                )
+                $('.t-content').html('')
+                $('.t-shade').css('display', 'none')
+            })
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {},
+            created() {},
+            mounted() {},
+            methods: {
+                jxk(id, e) {
+                    $('#gpTab li').removeClass('active')
+                    $('#gpTab li').eq(id).addClass('active')
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>

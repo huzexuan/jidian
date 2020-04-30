@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>我的</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <style>
+        .nav {
+            width: 100%;
+            height: 4rem;
+            background: #a07c5a;
+            position: fixed;
+            top: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav p {
+            margin: auto;
+        }
+        
+        .iconxiangzuojiantou {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .zoom {
+            width: 100%;
+            height: 4rem;
+        }
+        
+        .venue_item {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 1rem;
+        }
+        
+        .item {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 0.05rem solid #f4ece4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .iconermai,
+        .iconbofang {
+            font-size: 1.3rem;
+            color: #a67236;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+            <p>请选择场馆类型</p>
+        </div>
+        <div class="zoom"></div>
+        <div class="venue_item">
+            <div class="item">
+                一直很安静<i class="iconfont iconermai" data-status="1" @click="play($event)"></i>
+            </div>
+        </div>
+        <div class="venue_item">
+            <div class="item">
+                朋友<i class="iconfont iconermai" data-status="1" @click="play($event)"></i>
+            </div>
+        </div>
+        <div class="venue_item">
+            <div class="item">
+                朋友<i class="iconfont iconermai" data-status="1" @click="play($event)"></i>
+            </div>
+        </div>
+        <audio id="music" src="http://mp3.9ku.com/new/2015/10-13/667237.mp3" loop autoplay></audio>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        window.onbeforeunload = function(e) {
+            $('#music')[0].pause();
+
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {},
+            created() {},
+            mounted() {
+                $('#music')[0].pause();
+            },
+            methods: {
+                play(e) {
+                    if ($(e.currentTarget).hasClass('iconermai')) {
+                        $('#music')[0].play();
+                        $('#music')[0].currentTime = 0;
+                        $('.venue_item .iconfont').addClass('iconermai')
+                        $(e.currentTarget).removeClass('iconermai').addClass('iconbofang')
+                    } else if ($(e.currentTarget).hasClass('iconbofang')) {
+                        $('#music')[0].pause();
+                        $(e.currentTarget).removeClass('iconbofang').addClass('iconermai')
+                    }
+
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

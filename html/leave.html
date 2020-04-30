@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>纪念馆</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        body {
+            background: #fbf8f3;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+        }
+        
+        .page_title {
+            width: 100vw;
+            height: 4rem;
+            background: #a07c5a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .page_title p {
+            width: 100vw;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .iconxiangzuojiantou {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .zoom {
+            width: 100vw;
+            height: 4.5rem;
+        }
+        
+        .add_leave {
+            width: 3rem;
+            height: 3rem;
+            position: fixed;
+            bottom: 5rem;
+            right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="page_title">
+                <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+                <p>寄哀思</p>
+            </div>
+        </div>
+        <div class="zoom"></div>
+        <!-- 寄哀思 -->
+        <div class="SendGrief" v-for='(i,key) in SendGriefList' :key="key" :style="{'border-top':key == 0?'0.05rem solid #dcddd8':'0'}">
+            <div class="SendGrief_item">
+                <div class="SendGrief_itemL">
+                    <img class="SendGrief_portrait" src="../img/no_portrait.png">
+                    <p>张杰</p>
+                </div>
+                <div class="SendGrief_itemR">
+                    <div class="SendGrief_message">
+                        {{i.text}}
+                    </div>
+                    <div class="box_height" v-if="SendGrief_hShow">
+                        <p @click="SendGrief_height($event,1)" style="display: none;">收起<i class="iconfont iconxiangxiajiantou "></i></p>
+                        <p @click="SendGrief_height($event,2)" style="display: block;">点击展开<i class="iconfont iconxiangxiajiantou-copy"></i></p>
+                    </div>
+                    <div class="SendGrief_operation">
+                        <p>2020-4-16 09:23:12</p>
+                        <div class="SendGrief_attention" @click="SendGrief_attention($event)">
+                            <i class="iconfont iconxin" style="display: none;"></i>
+                            <i class="iconfont iconaixin"></i> 1k
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="over">------ 已经到底了 ------</div>
+        <a href="./add_leave.html"><img class="add_leave" src="../img/addLeave.png" alt=""></a>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                SendGrief_hShow: false,
+                SendGriefList: [{
+                    id: 1,
+                    text: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+                }, {
+                    id: 2,
+                    text: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
+                }]
+            },
+            created() {},
+            mounted() {
+                let _this = this
+                for (let i = 0; i < $('.SendGrief_message').length; i++) {
+                    if ($('.SendGrief_message').eq(i).height() > 80) {
+                        $('.SendGrief_message').eq(i).height('5rem')
+                        _this.SendGrief_hShow = true
+                    }
+                }
+            },
+            methods: {
+                SendGrief_height(e, type) {
+                    let height = e.currentTarget.parentElement.previousElementSibling
+                    console.log()
+                    if (type == 2) {
+                        $(height).height('auto')
+                        $(e.currentTarget.previousElementSibling).css('display', 'block')
+                        $(e.currentTarget).css('display', 'none')
+                    } else {
+                        $(height).height('5rem')
+                        $(e.currentTarget.nextElementSibling).css('display', 'block')
+                        $(e.currentTarget).css('display', 'none')
+                    }
+                },
+                SendGrief_attention(e) {
+                    let _this = e.currentTarget.firstElementChild
+                    $(_this).css('display', 'block')
+                    $(_this.nextElementSibling).css('display', 'none')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

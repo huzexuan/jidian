@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>纪念馆</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/particulars.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="page_title">
+                <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+                <p>毛泽东纪念馆</p>
+                <div class="nav-r">
+                    <!-- iconxin -->
+                    <i class="iconfont iconaixin1 "></i> 关注
+                </div>
+            </div>
+        </div>
+        <div class="box_bg">
+            <div class="user">
+                <img src="../img/portrait.jpg" />
+                <p class="name">毛泽东</p>
+                <p class="memorial">访问:291 祭拜:254 留言:10</p>
+                <div class="memorial_select">
+                    <a href="#" class="item">
+                        <img src="../img/01.jpg" />
+                        <p>献花</p>
+                    </a>
+                    <a href="#" class="item">
+                        <img src="../img/02.jpg" />
+                        <p>献供</p>
+                    </a>
+                    <a href="#" class="item">
+                        <img src="../img/01.jpg" />
+                        <p>点烛</p>
+                    </a>
+                    <a href="#" class="item">
+                        <img src="../img/02.jpg" />
+                        <p>上香</p>
+                    </a>
+                    <a href="#" class="item">
+                        <img src="../img/01.jpg" />
+                        <p>敬酒</p>
+                    </a>
+                </div>
+                <div class="btn_box">
+                    <a class="item" href="./cemetery.html">
+                        网上墓园
+                    </a>
+                    <a class="item" href="./leave.html">
+                        祭奠留言
+                    </a>
+                    <a class="item" href="./lifetime.html">
+                        生平简介
+                    </a>
+                    <a class="item" href="./album.html">
+                        纪念相册
+                    </a>
+                </div>
+            </div>
+            <img src="../img/music.png" @click='play($event)' data-id="1" class="music_img">
+        </div>
+    </div>
+    <audio id="music" src="http://mp3.9ku.com/new/2015/10-13/667237.mp3" loop autoplay></audio>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        window.onbeforeunload = function(e) {
+            $('#music')[0].pause();
+
+        }
+
+        var app = new Vue({
+            el: '#app',
+            data: {},
+            created() {},
+            mounted() {
+                $('#music')[0].play();
+            },
+            methods: {
+                play(e) {
+                    if ($(e.currentTarget).data('id') == 1) {
+                        $('.music_img').attr('src', '../img/no_music.png')
+                        $('#music')[0].pause();
+                        $(e.currentTarget).data('id', '2')
+                    } else {
+                        $('.music_img').attr('src', '../img/music.png')
+                        $('#music')[0].play();
+                        $('#music')[0].currentTime = 0;
+                        $(e.currentTarget).data('id', '1')
+
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

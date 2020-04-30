@@ -1,0 +1,214 @@
+body {
+    background: #fbf8f3;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+a {
+    color: #000;
+}
+
+.index_nav {
+    width: 100%;
+    height: 4rem;
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    color: #000100;
+    background: #fbf8f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.search_input {
+    width: 60vw;
+    height: 2rem;
+    box-sizing: border-box;
+    padding: 0.5rem 5rem 0.5rem 0.5rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.2rem 0.1rem #eee;
+}
+
+.search_title {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.5rem;
+    padding-left: 0.4rem;
+    color: #a3835c;
+    border-left: 0.1rem solid #a3835c;
+}
+
+
+/* 轮播图 */
+
+.swiper-container {
+    width: 100vw;
+    height: 13rem;
+}
+
+.swiper-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container {
+    position: relative;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 1rem !important;
+    left: -10rem !important;
+}
+
+.swiper-pagination-bullet {
+    background: rgba(167, 113, 53, 1);
+}
+
+
+/*添加纪念馆*/
+
+.add_memorial {
+    width: 60vw;
+    padding: 0.3rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #aa6d2a;
+    text-align: center;
+    border: 0.09rem solid #a28c52;
+    border-radius: 0.7rem;
+    margin: auto;
+    margin-top: -1rem;
+    background: #fff;
+    z-index: 1111;
+    position: relative;
+}
+
+
+/* 背景 */
+
+.bg_img {
+    width: 100vw;
+    height: 5rem;
+    margin-top: -1.4rem;
+}
+
+
+/* 寄哀思 */
+
+.SendGrief {
+    width: 96vw;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 1.4rem 1rem 1rem 1rem;
+    margin: auto;
+    border-radius: 0.5rem;
+    border-left: 0.05rem solid #dcddd8;
+    border-right: 0.05rem solid #dcddd8;
+    border-bottom: 0.05rem dotted #dcddd8;
+}
+
+.SendGrief_title {
+    font-size: 1.2rem;
+    color: #30312c;
+    font-weight: bold;
+    margin-top: -0.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.SendGrief_item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.SendGrief_itemL>p {
+    font-size: 1rem;
+    color: #797979;
+    text-align: center;
+    margin-top: 0.6rem;
+}
+
+.SendGrief_portrait {
+    width: 18vw;
+    display: block;
+}
+
+.SendGrief_itemR {
+    width: 64vw;
+}
+
+.SendGrief_message {
+    width: 100%;
+    /* height: 5rem; */
+    overflow: hidden;
+}
+
+.box_height {
+    overflow: hidden;
+}
+
+.box_height p {
+    float: right;
+    font-size: 0.8rem;
+    color: #946e49;
+}
+
+.iconxiangxiajiantou-copy,
+.iconxiangxiajiantou {
+    font-size: 0.8rem;
+    color: #946e49;
+}
+
+.SendGrief_operation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.SendGrief_operation p {
+    font-size: 0.8rem;
+    color: #747474;
+}
+
+.SendGrief_attention {
+    padding: 0.25rem 0.5rem;
+    background: #efefef;
+    border: 0.05rem solid #e5e5e5;
+    border-radius: 1rem;
+    line-height: 1;
+    color: #f44179;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.SendGrief_attention .iconxin {
+    font-size: 0.8rem;
+    color: #f44179;
+}
+
+.iconaixin {
+    font-size: 0.7rem;
+    color: #f44179;
+    margin-right: 0.3rem;
+}
+
+.over {
+    padding: 1rem 0 10.5vh;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #cfcfcf;
+}

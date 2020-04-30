@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>纪念馆</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/hot.css">
+    <style>
+        body {
+            background: #fbf8f3;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+        }
+        
+        .page_title {
+            width: 100vw;
+            height: 4rem;
+            background: #a07c5a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .page_title p {
+            width: 100vw;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .iconxiangzuojiantou {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .icontianjiajiahaowubiankuang {
+            position: absolute;
+            right: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .nav-tab {
+            width: auto;
+            background-color: #fff;
+            text-align: center;
+            height: 2.5rem;
+            line-height: 2.5rem;
+        }
+        
+        .tab_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .swiper_tab_list {
+            flex: 1;
+            font-size: 1rem;
+            height: 2.4rem;
+            color: #797979;
+            border-bottom: 0.1rem solid #fff;
+        }
+        
+        .on {
+            color: #ca0c16;
+            border-bottom: 0.1rem solid #ca0c16;
+        }
+        
+        .hot_list {
+            margin-top: 7rem;
+        }
+        
+        .over {
+            width: 100vw;
+            padding: 1rem 0 10.5vh;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #cfcfcf;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="page_title">
+                <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+                <p>我的纪念馆</p>
+                <a href="./add_memorial.html" class="iconfont icontianjiajiahaowubiankuang"></a>
+            </div>
+            <div class="nav-tab">
+                <div class="tab_item">
+                    <div :class="['swiper_tab_list',{'on':currentTab == 1}]" @click="swichNav($event,1)">我创建的</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 2}] " @click="swichNav($event,2)">我关注的</div>
+                </div>
+            </div>
+        </div>
+        <div class="hot_list">
+            <div class="hot_item" v-for="(i,key) in hotList" :key='key'>
+                <div class="hot_portrait">
+                    <img :src="i.img " class="hot_portraitImg" />
+                    <p class="hot_birthdate">{{ i.birthdate}}</p>
+                </div>
+                <div>
+                    <p class="hot_name">{{ i.name }}</p>
+                    <div class="hot_describe">
+                        <div class="hot_describe_item">
+                            <p class="icon">
+                                <img src="../img/huiyuan.png" class="huiyuan" />
+                            </p>
+                            <p class="over_text">{{ i.member }}</p>
+                        </div>
+                        <div class="hot_describe_item">
+                            <p class="icon">
+                                <img src="../img/lazhu.png" class="lazhu" />
+                            </p>
+                            <p class="over_text">{{i.num}}</p>
+                        </div>
+                        <div class="hot_describe_item">
+                            <div class="ai">爱</div>
+                            <div class="ai-bg">
+                                <i class="iconfont iconxin"></i>{{i.ainum}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="over">------ 已经到底了 ------</div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                currentTab: 1,
+                hotList: [{
+                    name: '毛泽东',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 75395,
+                    ainum: 8,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '周恩来',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 101,
+                    ainum: 7,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '毛泽东',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 75395,
+                    ainum: 8,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '周恩来',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 101,
+                    ainum: 7,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }],
+            },
+            created() {},
+            mounted() {
+                let _this = this
+                this.onshow()
+                var url_id = $.parseParams(location.href.split('?')[1] || '')
+                this.currentTab = url_id.currentTab
+            },
+            methods: {
+                onshow() {},
+                swichNav(e, id) {
+                    let _this = e.currentTarget
+                    if (this.currentTab === id) {
+                        return false
+                    } else {
+                        this.currentTab = id
+                        this.onshow()
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

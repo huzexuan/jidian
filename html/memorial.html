@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>纪念馆</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/memorial.css">
+    <link rel="stylesheet" href="../css/hot.css">
+    <link rel="stylesheet" href="../css/tab.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="page_title">纪念馆</div>
+            <div class="nav-tab">
+                <div class="tab_item">
+                    <div :class="['swiper_tab_list',{'on':currentTab == 1}]" @click="swichNav($event,1)">推荐</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 2}] " @click="swichNav($event,2)">亲人馆</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 3}] " @click="swichNav($event,3)">艺人馆</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 4}] " @click="swichNav($event,4)">推荐</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 5}] " @click="swichNav($event,5)">亲人馆</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 6}] " @click="swichNav($event,6)">艺人馆</div>
+                    <div :class="['swiper_tab_list',{'on':currentTab == 7}] " @click="swichNav($event,7)">艺人馆</div>
+                </div>
+            </div>
+        </div>
+        <div class="hot_list">
+            <div class="hot_item" v-for="(i,key) in hotList" :key='key'>
+                <div class="hot_portrait">
+                    <img :src="i.img " class="hot_portraitImg" />
+                    <p class="hot_birthdate">{{ i.birthdate}}</p>
+                </div>
+                <div>
+                    <p class="hot_name">{{ i.name }}</p>
+                    <div class="hot_describe">
+                        <div class="hot_describe_item">
+                            <p class="icon">
+                                <img src="../img/huiyuan.png" class="huiyuan" />
+                            </p>
+                            <p class="over_text">{{ i.member }}</p>
+                        </div>
+                        <div class="hot_describe_item">
+                            <p class="icon">
+                                <img src="../img/lazhu.png" class="lazhu" />
+                            </p>
+                            <p class="over_text">{{i.num}}</p>
+                        </div>
+                        <div class="hot_describe_item">
+                            <div class="ai">爱</div>
+                            <div class="ai-bg">
+                                <i class="iconfont iconxin"></i>{{i.ainum}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="over">------ 已经到底了 ------</div>
+        <footer class="footer">
+            <a class="footer_item " href="./index.html">
+                <img src="../img/index2.png" /> 首页
+            </a>
+            <a class="footer_item activ" href="./memorial.html">
+                <img src="../img/memorial1.png" /> 纪念馆
+            </a>
+            <a class="footer_item " href="./me.html">
+                <img src="../img/me2.png" /> 我的
+            </a>
+        </footer>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                currentTab: 1,
+                hotList: [{
+                    name: '毛泽东',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 75395,
+                    ainum: 8,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '周恩来',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 101,
+                    ainum: 7,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '毛泽东',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 75395,
+                    ainum: 8,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '周恩来',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 101,
+                    ainum: 7,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }],
+            },
+            created() {},
+            mounted() {
+                let _this = this
+                this.onshow()
+
+            },
+            methods: {
+                onshow() {
+                    // var mySwiper = new Swiper('.swiper-container', {
+                    //     speed: 1000,
+                    //     // loop: false,
+                    //     // slidesPerView: 'auto',
+                    //     // freeMode: true
+                    //     activeIndex: 0
+                    // })
+                    // var index = this.currentTab
+                    // mySwiper.slideTo(index, 1000, false);
+                    // // this.currentTab = mySwiper.activeIndex
+                },
+                swichNav(e, id) {
+                    let _this = e.currentTarget
+                    if (this.currentTab === id) {
+                        return false
+                    } else {
+                        this.currentTab = id
+                        this.onshow()
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

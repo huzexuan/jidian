@@ -1,0 +1,58 @@
+body {
+    background: #fbf8f3;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+}
+
+.page_title {
+    width: 100vw;
+    height: 4rem;
+    background: #a07c5a;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 4rem;
+    color: #fff;
+}
+
+.nav-tab {
+    width: auto;
+    background-color: #fff;
+    text-align: center;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.tab_item {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.swiper_tab_list {
+    font-size: 1rem;
+    height: 2.4rem;
+    display: inline-block;
+    width: 20%;
+    color: #797979;
+    border-bottom: 0.1rem solid #fff;
+}
+
+.on {
+    color: #ca0c16;
+    border-bottom: 0.1rem solid #ca0c16;
+}
+
+.hot_list {
+    margin-top: 7rem;
+}
+
+.over {
+    width: 100vw;
+    padding: 1rem 0 10.5vh;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #cfcfcf;
+}

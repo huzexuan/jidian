@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>我的</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <style>
+        #app {
+            position: relative;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+        }
+        
+        .page_title {
+            width: 100vw;
+            height: 4rem;
+            background: #a07c5a;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .page_title p {
+            width: 100vw;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .iconxiangzuojiantou {
+            position: absolute;
+            left: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .conten {
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            background: peachpuff;
+        }
+        
+        .box {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -45vw;
+            width: 90vw;
+            box-sizing: border-box;
+            padding: 3rem 1.5rem 1rem 1.5rem;
+            background: #fff;
+            border-radius: 0.6rem;
+            box-shadow: 0 0 0.5rem #efefef;
+        }
+        
+        .title {
+            width: 100%;
+            height: 2.5rem;
+            font-size: 1rem;
+            background: #2399e1;
+            border-radius: 0.5rem;
+            color: #fff;
+            text-align: center;
+            line-height: 2.5rem;
+        }
+        
+        .fenxiang {
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .item img {
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            margin: auto;
+        }
+        
+        .text {
+            height: 1.5rem;
+            line-height: 1.5rem;
+            border-radius: 0.2rem;
+            border: 0.05rem solid #78c9ff;
+            font-size: 0.6rem;
+            padding: 0 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .describe p {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #2cabee;
+        }
+        
+        .box>p {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #ccae96;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="nav">
+            <div class="page_title">
+                <a href="javascript:history.go(-1);" class="iconfont iconxiangzuojiantou"></a>
+                <p>邀请赚积分</p>
+            </div>
+        </div>
+        <div class="conten">
+            <div class="box">
+                <div class="title">
+                    邀 请 好 友 赢 积 分
+                </div>
+                <div class="fenxiang">
+                    <a class="item">
+                        <img src="../img/wecat.png" alt="">
+                        <div class="text">微信好友</div>
+                    </a>
+                    <a class="item">
+                        <img src="../img/friend_circle.png" alt="">
+                        <div class="text">微信朋友圈</div>
+                    </a>
+                    <a class="item">
+                        <img src="../img/collect.png" alt="">
+                        <div class="text">微信收藏</div>
+                    </a>
+                </div>
+                <div class="describe">
+                    <p>* 每天祭拜获得积分</p>
+                    <p>* 邀请好友获得积分</p>
+                </div>
+                <p>积分可用来扫墓哦</p>
+            </div>
+
+        </div>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+</body>
+
+</html>

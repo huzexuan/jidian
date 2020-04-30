@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/hot.css">
+    <link rel="stylesheet" href="../css/tab.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <nav class="index_nav">
+                <div class="location">
+                    <i class="iconfont icondingwei" style="color: #a67332;"></i>{{text}}
+                </div>
+                <div class="search">
+                    <input type="text" class="search_input" placeholder="查找纪念管" />
+                    <div class="search_title">
+                        开始查找
+                    </div>
+                </div>
+            </nav>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="(i,key) in swiperList" :key='key'>
+                        <img :src="i.img" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </header>
+        <a href="./add_memorial.html">
+            <div class="add_memorial">
+                <i class="iconfont icontianjia1" style="color: #a67332;margin-right: 0.3rem;"></i>免费创建纪念管
+            </div>
+        </a>
+        <!-- 背景 -->
+        <img src="../img/bg.jpg" class="bg_img">
+        <!-- 热门 -->
+        <div class="hot_box">
+            <div class="hot_title">热门</div>
+            <div class="hot_list">
+                <a href="./particulars.html" class="hot_item" v-for="(i,key) in hotList" :key='key'>
+                    <div class="hot_portrait">
+                        <img :src="i.img " class="hot_portraitImg" />
+                        <p class="hot_birthdate">{{ i.birthdate}}</p>
+                    </div>
+                    <div>
+                        <p class="hot_name">{{ i.name }}</p>
+                        <div class="hot_describe">
+                            <div class="hot_describe_item">
+                                <p class="icon">
+                                    <img src="../img/huiyuan.png" class="huiyuan" />
+                                </p>
+                                <p class="over_text">{{ i.member }}</p>
+                            </div>
+                            <div class="hot_describe_item">
+                                <p class="icon">
+                                    <img src="../img/lazhu.png" class="lazhu" />
+                                </p>
+                                <p class="over_text">{{i.num}}</p>
+                            </div>
+                            <div class="hot_describe_item">
+                                <div class="ai">爱</div>
+                                <div class="ai-bg">
+                                    <i class="iconfont iconxin"></i>{{i.ainum}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- 寄哀思 -->
+        <div class="SendGrief" v-for='(i,key) in SendGriefList' :key="key" :style="{'border-top':key == 0?'0.05rem solid #dcddd8':'0'}">
+            <div class="SendGrief_title" v-if="key == 0">
+                寄哀思
+            </div>
+            <div class="SendGrief_item">
+                <div class="SendGrief_itemL">
+                    <img class="SendGrief_portrait" src="../img/no_portrait.png">
+                    <p>张杰</p>
+                </div>
+                <div class="SendGrief_itemR">
+                    <div class="SendGrief_message">
+                        {{i.text}}
+                    </div>
+                    <div class="box_height" v-if="SendGrief_hShow">
+                        <p @click="SendGrief_height($event,1)" style="display: none;">收起<i class="iconfont iconxiangxiajiantou "></i></p>
+                        <p @click="SendGrief_height($event,2)" style="display: block;">点击展开<i class="iconfont iconxiangxiajiantou-copy"></i></p>
+                    </div>
+                    <div class="SendGrief_operation">
+                        <p>2020-4-16 09:23:12</p>
+                        <div class="SendGrief_attention" @click="SendGrief_attention($event)">
+                            <i class="iconfont iconxin" style="display: none;"></i>
+                            <i class="iconfont iconaixin"></i> 1k
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="over">------ 已经到底了 ------</div>
+        <footer class="footer" style="position:fixed;bottom: 0;">
+            <a class="footer_item activ" href="./index.html">
+                <img src="../img/index1.png" /> 首页
+            </a>
+            <a class="footer_item" href="./memorial.html">
+                <img src="../img/memorial2.png" /> 纪念馆
+            </a>
+            <a class="footer_item" href="./me.html">
+                <img src="../img/me2.png" /> 我的
+            </a>
+        </footer>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: "保定",
+                SendGrief_hShow: false,
+                swiperList: [{
+                    img: '../img/banner1.jpg',
+                    id: 1
+                }, {
+                    img: '../img/banner2.jpg',
+                    id: 1
+                }],
+                hotList: [{
+                    name: '毛泽东',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 75395,
+                    ainum: 8,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '周恩来',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 101,
+                    ainum: 7,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '毛泽东',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 75395,
+                    ainum: 8,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '周恩来',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 101,
+                    ainum: 7,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '钱学森',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 95,
+                    ainum: 6,
+                    img: '../img/portrait.jpg'
+                }, {
+                    name: '雷锋',
+                    birthdate: '1893~1976',
+                    member: '天堂念会员',
+                    num: 3,
+                    ainum: 5,
+                    img: '../img/portrait.jpg'
+                }],
+                SendGriefList: [{
+                    id: 1,
+                    text: "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
+                }, {
+                    id: 2,
+                    text: '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈'
+                }]
+            },
+            created() {},
+            mounted() {
+                let _this = this
+                var mySwiper = new Swiper('.swiper-container', {
+                    // autoplay: true,
+                    speed: 1000,
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                })
+                for (let i = 0; i < $('.SendGrief_message').length; i++) {
+                    if ($('.SendGrief_message').eq(i).height() > 80) {
+                        $('.SendGrief_message').eq(i).height('5rem')
+                        _this.SendGrief_hShow = true
+                    }
+                }
+
+            },
+            methods: {
+                SendGrief_height(e, type) {
+                    let height = e.currentTarget.parentElement.previousElementSibling
+                    console.log()
+                    if (type == 2) {
+                        $(height).height('auto')
+                        $(e.currentTarget.previousElementSibling).css('display', 'block')
+                        $(e.currentTarget).css('display', 'none')
+                    } else {
+                        $(height).height('5rem')
+                        $(e.currentTarget.nextElementSibling).css('display', 'block')
+                        $(e.currentTarget).css('display', 'none')
+                    }
+                },
+                SendGrief_attention(e) {
+                    let _this = e.currentTarget.firstElementChild
+                    $(_this).css('display', 'block')
+                    $(_this.nextElementSibling).css('display', 'none')
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
